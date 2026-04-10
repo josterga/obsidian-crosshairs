@@ -1,0 +1,73 @@
+/* Hide the default line cursor and caret */
+.cm-cursor,
+.cm-cursorLayer {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Ensure cursor is visible even when editor loses focus */
+.cm-editor .cm-cursor {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Overlay containers */
+#block-cursor-overlay,
+#mouse-cursor-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+
+#block-cursor-overlay {
+  z-index: 9999;
+}
+
+#mouse-cursor-overlay {
+  z-index: 9997;
+}
+
+/* Block cursor styling with blinking animation */
+.block-cursor {
+  position: fixed;
+  background: var(--text-accent, #00bbff);
+  opacity: 0.8;
+  z-index: 10000;
+  pointer-events: none;
+  border-radius: 1px;
+  animation: cursor-blink 1s step-end infinite;
+}
+
+/* Blinking animation for the block cursor */
+@keyframes cursor-blink {
+  0%,
+  50% {
+    opacity: 0.8;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Cursor crosshair extension lines */
+.cursor-ext {
+  position: fixed;
+  pointer-events: none;
+  background: var(--text-accent, #00bbff);
+  opacity: 0.15;
+  z-index: 9998;
+}
+
+/* Mouse crosshair extension lines */
+.mouse-ext {
+  position: fixed;
+  pointer-events: none;
+  background: var(--text-muted, #666);
+  opacity: 0.3;
+  z-index: 9997;
+  transition: opacity 0.1s ease;
+}
