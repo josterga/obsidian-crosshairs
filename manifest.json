@@ -1,7 +1,7 @@
 {
 	"id": "crosshair",
 	"name": "Crosshairs",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"minAppVersion": "1.1.0",
 	"description": "Adds crosshair cursor and mouse indicators for better navigation in Obsidian.",
 	"author": "James Ostergaard",
